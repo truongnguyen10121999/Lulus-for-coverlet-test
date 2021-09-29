@@ -1,0 +1,15 @@
+D:\.CanDelete\Git\Lulus-master\Lulus.ViewModels\bin\Debug\net5.0\Lulus.ViewModels.deps.json
+D:\.CanDelete\Git\Lulus-master\Lulus.ViewModels\bin\Debug\net5.0\Lulus.ViewModels.dll
+D:\.CanDelete\Git\Lulus-master\Lulus.ViewModels\bin\Debug\net5.0\ref\Lulus.ViewModels.dll
+D:\.CanDelete\Git\Lulus-master\Lulus.ViewModels\bin\Debug\net5.0\Lulus.ViewModels.pdb
+D:\.CanDelete\Git\Lulus-master\Lulus.ViewModels\bin\Debug\net5.0\Lulus.Data.dll
+D:\.CanDelete\Git\Lulus-master\Lulus.ViewModels\bin\Debug\net5.0\Lulus.Data.pdb
+D:\.CanDelete\Git\Lulus-master\Lulus.ViewModels\obj\Debug\net5.0\Lulus.ViewModels.csprojAssemblyReference.cache
+D:\.CanDelete\Git\Lulus-master\Lulus.ViewModels\obj\Debug\net5.0\Lulus.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+D:\.CanDelete\Git\Lulus-master\Lulus.ViewModels\obj\Debug\net5.0\Lulus.ViewModels.AssemblyInfoInputs.cache
+D:\.CanDelete\Git\Lulus-master\Lulus.ViewModels\obj\Debug\net5.0\Lulus.ViewModels.AssemblyInfo.cs
+D:\.CanDelete\Git\Lulus-master\Lulus.ViewModels\obj\Debug\net5.0\Lulus.ViewModels.csproj.CoreCompileInputs.cache
+D:\.CanDelete\Git\Lulus-master\Lulus.ViewModels\obj\Debug\net5.0\Lulus.ViewModels.csproj.CopyComplete
+D:\.CanDelete\Git\Lulus-master\Lulus.ViewModels\obj\Debug\net5.0\Lulus.ViewModels.dll
+D:\.CanDelete\Git\Lulus-master\Lulus.ViewModels\obj\Debug\net5.0\ref\Lulus.ViewModels.dll
+D:\.CanDelete\Git\Lulus-master\Lulus.ViewModels\obj\Debug\net5.0\Lulus.ViewModels.pdb

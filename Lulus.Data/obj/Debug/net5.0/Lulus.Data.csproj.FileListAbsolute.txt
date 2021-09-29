@@ -1,0 +1,15 @@
+D:\.CanDelete\Git\Lulus-master\Lulus.Data\bin\Debug\net5.0\Lulus.Data.deps.json
+D:\.CanDelete\Git\Lulus-master\Lulus.Data\bin\Debug\net5.0\Lulus.Data.runtimeconfig.json
+D:\.CanDelete\Git\Lulus-master\Lulus.Data\bin\Debug\net5.0\Lulus.Data.runtimeconfig.dev.json
+D:\.CanDelete\Git\Lulus-master\Lulus.Data\bin\Debug\net5.0\Lulus.Data.dll
+D:\.CanDelete\Git\Lulus-master\Lulus.Data\bin\Debug\net5.0\ref\Lulus.Data.dll
+D:\.CanDelete\Git\Lulus-master\Lulus.Data\bin\Debug\net5.0\Lulus.Data.pdb
+D:\.CanDelete\Git\Lulus-master\Lulus.Data\obj\Debug\net5.0\Lulus.Data.csprojAssemblyReference.cache
+D:\.CanDelete\Git\Lulus-master\Lulus.Data\obj\Debug\net5.0\Lulus.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\.CanDelete\Git\Lulus-master\Lulus.Data\obj\Debug\net5.0\Lulus.Data.AssemblyInfoInputs.cache
+D:\.CanDelete\Git\Lulus-master\Lulus.Data\obj\Debug\net5.0\Lulus.Data.AssemblyInfo.cs
+D:\.CanDelete\Git\Lulus-master\Lulus.Data\obj\Debug\net5.0\Lulus.Data.csproj.CoreCompileInputs.cache
+D:\.CanDelete\Git\Lulus-master\Lulus.Data\obj\Debug\net5.0\Lulus.Data.dll
+D:\.CanDelete\Git\Lulus-master\Lulus.Data\obj\Debug\net5.0\ref\Lulus.Data.dll
+D:\.CanDelete\Git\Lulus-master\Lulus.Data\obj\Debug\net5.0\Lulus.Data.pdb
+D:\.CanDelete\Git\Lulus-master\Lulus.Data\obj\Debug\net5.0\Lulus.Data.genruntimeconfig.cache

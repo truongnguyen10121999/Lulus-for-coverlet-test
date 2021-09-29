@@ -1,0 +1,17 @@
+D:\.CanDelete\Git\Lulus-master\Lulus.BAL\bin\Debug\net5.0\Lulus.BAL.deps.json
+D:\.CanDelete\Git\Lulus-master\Lulus.BAL\bin\Debug\net5.0\Lulus.BAL.dll
+D:\.CanDelete\Git\Lulus-master\Lulus.BAL\bin\Debug\net5.0\ref\Lulus.BAL.dll
+D:\.CanDelete\Git\Lulus-master\Lulus.BAL\bin\Debug\net5.0\Lulus.BAL.pdb
+D:\.CanDelete\Git\Lulus-master\Lulus.BAL\bin\Debug\net5.0\Lulus.Data.dll
+D:\.CanDelete\Git\Lulus-master\Lulus.BAL\bin\Debug\net5.0\Lulus.ViewModels.dll
+D:\.CanDelete\Git\Lulus-master\Lulus.BAL\bin\Debug\net5.0\Lulus.Data.pdb
+D:\.CanDelete\Git\Lulus-master\Lulus.BAL\bin\Debug\net5.0\Lulus.ViewModels.pdb
+D:\.CanDelete\Git\Lulus-master\Lulus.BAL\obj\Debug\net5.0\Lulus.BAL.csprojAssemblyReference.cache
+D:\.CanDelete\Git\Lulus-master\Lulus.BAL\obj\Debug\net5.0\Lulus.BAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\.CanDelete\Git\Lulus-master\Lulus.BAL\obj\Debug\net5.0\Lulus.BAL.AssemblyInfoInputs.cache
+D:\.CanDelete\Git\Lulus-master\Lulus.BAL\obj\Debug\net5.0\Lulus.BAL.AssemblyInfo.cs
+D:\.CanDelete\Git\Lulus-master\Lulus.BAL\obj\Debug\net5.0\Lulus.BAL.csproj.CoreCompileInputs.cache
+D:\.CanDelete\Git\Lulus-master\Lulus.BAL\obj\Debug\net5.0\Lulus.BAL.csproj.CopyComplete
+D:\.CanDelete\Git\Lulus-master\Lulus.BAL\obj\Debug\net5.0\Lulus.BAL.dll
+D:\.CanDelete\Git\Lulus-master\Lulus.BAL\obj\Debug\net5.0\ref\Lulus.BAL.dll
+D:\.CanDelete\Git\Lulus-master\Lulus.BAL\obj\Debug\net5.0\Lulus.BAL.pdb
