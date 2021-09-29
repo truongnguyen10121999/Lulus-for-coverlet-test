@@ -1,0 +1,47 @@
+﻿@model Lulus.CustomerApp.Models.Products.SortModel
+<style>
+    .sort-btn {
+        color: black;
+        padding: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+        background-color: white;
+        border-style:none;
+        font-family:Arial
+    }
+    .sort-btn :hover{
+        color:orange;
+    }
+</style>
+<form asp-action="Sort" asp-controller="Product" method="post">
+    <input asp-for="CategoryID" value="@Model.CategoryID" hidden />
+    <input asp-for="SubcategoryID" value="@Model.SubcategoryID" hidden />
+    <div class="form-group">
+        <label for="min" style="text-align:center; width:100%">Min</label>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+            </div>
+            <input type="number" class="form-control" id="min" asp-for="Min">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="max" style="text-align:center; width:100%"> Max</label>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+            </div>
+            <input type="number" class="form-control" id="max" asp-for="Max">
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="sort-btn" type="submit">Apply</button>
+    </div>
+</form>
+<a class="sort-btn" 
+   type="submit" 
+   asp-action="Index" 
+   asp-controller="Product" 
+   asp-route-id="@Model.CategoryID" 
+   asp-route-key="@Model.SubcategoryID">Reset</a>

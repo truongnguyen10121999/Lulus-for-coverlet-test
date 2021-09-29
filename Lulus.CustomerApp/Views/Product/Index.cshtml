@@ -1,0 +1,218 @@
+﻿@model Lulus.CustomerApp.Models.Products.ProductCategoryModel
+@using Lulus.CustomerApp.Models.Products
+
+<style>
+    .sort-bar {
+        max-width: 300px;
+        padding-left: 10%;
+        padding-right: 10%;
+        vertical-align: text-top
+    }
+
+        .sort-bar a {
+            text-decoration: none;
+            color: black;
+        }
+
+    .content {
+        top: 0;
+    }
+
+    .content__textureimage {
+        border-radius: 50px;
+        cursor: pointer;
+        margin-top: 10px;
+        border-style: solid;
+        border-color: gainsboro;
+        border-width: 2px
+    }
+
+    .content__productimage {
+        width: 100%
+    }
+
+    .mytable {
+    }
+
+        .mytable td {
+            vertical-align: top;
+            padding-top: 20px;
+        }
+    .content__price {
+        font-size: large;
+        padding-left: 10px
+    }
+
+    .content__more {
+        margin-left: 45%;
+        text-decoration: none;
+        color: orange;
+    }
+
+        .content__more :hover {
+            color: aqua;
+            text-decoration: none
+        }
+
+    .thumbnail {
+        position: relative;
+        cursor: pointer;
+    }
+
+    .thumbnail__image {
+        opacity: 1;
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: .5s ease;
+        backface-visibility: hidden;
+    }
+
+    .thumbnail__content {
+        transition: .5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+        .thumbnail__content a {
+            text-decoration: none;
+            color: dimgray;
+            font-size: large
+        }
+
+    .thumbnail:hover .thumbnail__image {
+        opacity: 0.3;
+    }
+
+    .thumbnail:hover .thumbnail__content {
+        opacity: 1;
+    }
+</style>
+<table style="width: 100%" class="mytable">
+    <tr>
+        <td>
+            <div class="sort-bar">
+                <h3>Refine By</h3>
+                <br />
+                <h4>Size</h4>
+                <hr />
+                @foreach (var size in Model.ListSizes)
+                {
+                    <p>
+                        <span><input type="checkbox" /></span>
+                        @size.Key
+                    </p>
+                    <br />
+                }
+                <h4>Price</h4>
+                @await Html.PartialAsync("Sort", new SortModel(ViewBag.CateID, ViewBag.SubcateID))
+                <hr />
+                <h4>Category</h4>
+                @foreach (var subCate in Model.ListSubCategories)
+                {
+
+                    if (subCate.Checked)
+                    {
+                        <a asp-action="FullList" asp-controller="Product" asp-route-id="@ViewBag.CateID" style="color:chocolate">
+                            @subCate.Name
+                        </a>
+                    }
+                    else
+                    {
+                        <a asp-action="Index" asp-controller="Product" asp-route-id="@ViewBag.CateID" asp-route-key="@subCate.ID">
+                            @subCate.Name
+                        </a>
+                    }
+                    <br />
+                }
+            </div>
+        </td>
+        <td>
+            <div class="content">
+                @if (Model.ListProducts.Count == 0)
+                {
+                    <p style="text-align:center;width:600px">Empty</p>
+                }
+                else
+                {
+                    <div class="container">
+                        <div class="row">
+                            @foreach (var product in Model.ListProducts)
+                            {
+                            <a asp-action="Details" asp-controller="Product" asp-route-id="@product.ID">
+
+                                <div class="col-md-3">
+                                    @foreach (var line in product.ListProductLines)
+                                    {
+                                        @foreach (var image in line.ListImages)
+                                        {
+                                            <div class="thumbnail">
+                                                <img src="@image.Image_Url" class="content__productimage thumbnail__image" id="presentImage+@product.ID" />
+                                                <div class="thumbnail__content">
+                                                    <a>View more</a>
+                                                </div>
+                                            </div>
+                                            break;
+                                        }
+                                        break;
+                                    }
+                                    @{
+                                        int lineCount = 0;
+                                        foreach (var line in product.ListProductLines)
+                                        {
+
+
+                                            if (lineCount < 6)
+                                            {
+                                                <img src="@line.Texture_Image_Url" alt="line-image" class="content__textureimage" onclick="ChangeImage(@line.ListImages[0].Image_Url,@product.ID)" />
+                                                lineCount++;
+                                            }
+                                            else
+                                            {
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    <table>
+                                        <tr>
+                                            <td><p>@product.Name</p></td>
+                                            <td>
+                                                @if (product.SalePrice != product.Price)
+                                                {
+                                                    <p class="content__price"><span style="text-decoration:line-through;font-size:small">$@product.Price</span> $@product.SalePrice</p>
+                                                }
+                                                else
+                                                {
+                                                    <p class="content__price">$@product.SalePrice</p>
+                                                }
+
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                            </a>
+                            }
+                        </div>
+
+
+                        <a href="#" class="content__more">View more ...</a>
+                    </div>
+                }
+
+
+            </div>
+        </td>
+    </tr>
+</table>
+<script>
+    function ChangeImage(url, id) {
+        document.getElementById("presentImage" + id).src = url;
+    }
+</script>
+

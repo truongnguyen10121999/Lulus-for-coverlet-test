@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "A-Line",
+    "checked": false
+  },
+  {
+    "id": 2,
+    "name": "Asymmetric",
+    "checked": false
+  },
+  {
+    "id": 3,
+    "name": "Babydoll",
+    "checked": false
+  },
+  {
+    "id": 4,
+    "name": "Mermaid",
+    "checked": false
+  },
+  {
+    "id": 5,
+    "name": "Babydoll",
+    "checked": false
+  }
+]

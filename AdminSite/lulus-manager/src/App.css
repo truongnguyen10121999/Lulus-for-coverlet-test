@@ -1,0 +1,15 @@
+
+.navbar{
+    position: relative;
+    max-width: 20%;
+    box-shadow: 10px 5px 5px #3b3a3a0a;
+    float: left;
+    height: 100%;
+}
+.content{ 
+    min-width: 600px;
+    overflow: hidden;
+    height: 100%;
+    background-color: gainsboro;
+    
+}
