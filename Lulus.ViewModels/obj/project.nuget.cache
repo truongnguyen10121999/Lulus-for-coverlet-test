@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "CYPmxl8VWISg8MpuW0XMUHz/TSGeDRpTaJ5bnLeLQUSEfLSYcTp/eMZOn90Vpa8jaS/VYxnwO6bpxT+7tj8DCw==",
+  "dgSpecHash": "ibY+EbcHeZISRMqboovOHThTNkPHlwWGWaXzAUSvzOcUznR8uzU1KY79sA+pRPXbvPYDs0yoIO0BeQ5c91vP6g==",
   "success": true,
   "projectFilePath": "D:\\.CanDelete\\Git\\Lulus-master\\Lulus.ViewModels\\Lulus.ViewModels.csproj",
   "expectedPackageFiles": [
@@ -22,6 +22,7 @@
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\5.0.0\\microsoft.extensions.configuration.fileextensions.5.0.0.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.extensions.configuration.json\\5.0.0\\microsoft.extensions.configuration.json.5.0.0.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.extensions.configuration.usersecrets\\3.1.0\\microsoft.extensions.configuration.usersecrets.3.1.0.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.1\\microsoft.extensions.dependencyinjection.5.0.1.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\5.0.0\\microsoft.extensions.fileproviders.abstractions.5.0.0.nupkg.sha512",
