@@ -6,6 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\SubCategory\**" />
+    <Content Remove="Views\SubCategory\**" />
+    <EmbeddedResource Remove="Views\SubCategory\**" />
+    <None Remove="Views\SubCategory\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.4" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
   </ItemGroup>
@@ -13,10 +20,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Lulus.Data\Lulus.Data.csproj" />
     <ProjectReference Include="..\Lulus.ViewModels\Lulus.ViewModels.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Views\SubCategory\" />
   </ItemGroup>
 
 </Project>

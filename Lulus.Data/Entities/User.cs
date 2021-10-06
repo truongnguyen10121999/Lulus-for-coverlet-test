@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Lulus.Data.Entities
 {
-    public class User: IdentityUser
+    public class User: IdentityUser<Guid>
     {        
         public string Customer_FirstName { get; set; }
         public string Customer_LastName { get; set; }

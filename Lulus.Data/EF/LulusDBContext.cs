@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Lulus.Data.EF
 {
-    public class LulusDBContext : IdentityDbContext<User>
+    public class LulusDBContext : IdentityDbContext<User, IdentityRole<Guid>, Guid>
     {
         public LulusDBContext(DbContextOptions options) : base(options)
         {
@@ -33,11 +33,6 @@ namespace Lulus.Data.EF
             modelBuilder.ApplyConfiguration(new SizeConfiguration());
             modelBuilder.ApplyConfiguration(new SubCategoryConfiguration());
             modelBuilder.ApplyConfiguration(new UserConfiguration());
-
-            modelBuilder.Entity<IdentityUserClaim<string>>().ToTable("UserClaims");
-            modelBuilder.Entity<IdentityUserRole<string>>().ToTable("UserRoles").HasKey(x => new { x.UserId, x.RoleId });
-            modelBuilder.Entity<IdentityUserLogin<string>>().ToTable("UserLogins").HasKey(x => x.UserId);
-            modelBuilder.Entity<IdentityUserToken<string>>().ToTable("UserTokens").HasKey(x => x.UserId);
         }
 
         public DbSet<Category> Categories { get; set; }
