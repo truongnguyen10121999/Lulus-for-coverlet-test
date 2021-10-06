@@ -673,13 +673,13 @@ namespace Lulus.Data.EF
                 {
                     ProductImage_ID = 4,
                     ProductLine_ID = 1,
-                    ProductImage_Image = baseImageUrl + "/1-3.jpg"
+                    ProductImage_Image = baseImageUrl + "/1-3.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 5,
                     ProductLine_ID = 1,
-                    ProductImage_Image = baseImageUrl + "/1-4.jpg"
+                    ProductImage_Image = baseImageUrl + "/1-4.png"
                 },
                 new ProductImage()
                 {
