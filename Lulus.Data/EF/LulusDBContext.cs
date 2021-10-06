@@ -33,6 +33,8 @@ namespace Lulus.Data.EF
             modelBuilder.ApplyConfiguration(new SizeConfiguration());
             modelBuilder.ApplyConfiguration(new SubCategoryConfiguration());
             modelBuilder.ApplyConfiguration(new UserConfiguration());
+
+            modelBuilder.Seed();
         }
 
         public DbSet<Category> Categories { get; set; }
