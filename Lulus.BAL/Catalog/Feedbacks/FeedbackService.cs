@@ -25,7 +25,7 @@ namespace Lulus.BAL.Catalog.Feedbacks
                 Feedback_Rating = request.Star,
                 Feedback_Title = request.Title,
                 Feedback_Content = request.Content,
-                User_ID = request.UserID,
+                User_ID = new Guid(request.UserID),
                 Product_ID = request.ProductID,
                 CreatedDate = DateTime.Now
             };

@@ -206,7 +206,7 @@ namespace Lulus.BAL.Catalog.Products
                 Star = f.Feedback_Rating,
                 Title = f.Feedback_Title,
                 Content = f.Feedback_Content,
-                UserID = f.User_ID,
+                UserID = f.User_ID.ToString(),
                 CreatedDate = f.CreatedDate,
                 ProductID = f.Product_ID
             }).ToListAsync();

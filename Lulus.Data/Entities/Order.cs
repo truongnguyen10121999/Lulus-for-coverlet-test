@@ -15,7 +15,7 @@ namespace Lulus.Data.Entities
 
         public double Order_Total { get; set; }
 
-        public string User_ID { get; set; }
+        public Guid User_ID { get; set; }
 
         public OrderStatus Status { get; set; }
 

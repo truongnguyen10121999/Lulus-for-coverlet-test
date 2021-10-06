@@ -769,79 +769,79 @@ namespace Lulus.Data.EF
                 {
                     ProductImage_ID = 20,
                     ProductLine_ID = 4,
-                    ProductImage_Image = baseImageUrl + "4-0.jpg"
+                    ProductImage_Image = baseImageUrl + "/4-0.jpg"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 21,
                     ProductLine_ID = 4,
-                    ProductImage_Image = baseImageUrl + "4-1.jpg"
+                    ProductImage_Image = baseImageUrl + "/4-1.jpg"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 22,
                     ProductLine_ID = 4,
-                    ProductImage_Image = baseImageUrl + "4-2.jpg"
+                    ProductImage_Image = baseImageUrl + "/4-2.jpg"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 23,
                     ProductLine_ID = 4,
-                    ProductImage_Image = baseImageUrl + "4-3.jpg"
+                    ProductImage_Image = baseImageUrl + "/4-3.jpg"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 24,
                     ProductLine_ID = 4,
-                    ProductImage_Image = baseImageUrl + "4-4.jpg"
+                    ProductImage_Image = baseImageUrl + "/4-4.jpg"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 25,
                     ProductLine_ID = 4,
-                    ProductImage_Image = baseImageUrl + "4-5.png"
+                    ProductImage_Image = baseImageUrl + "/4-5.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 26,
                     ProductLine_ID = 5,
-                    ProductImage_Image = baseImageUrl + "5-1.jpg"
+                    ProductImage_Image = baseImageUrl + "/5-1.jpg"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 27,
                     ProductLine_ID = 5,
-                    ProductImage_Image = baseImageUrl + "5-2.jpg"
+                    ProductImage_Image = baseImageUrl + "/5-2.jpg"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 28,
                     ProductLine_ID = 5,
-                    ProductImage_Image = baseImageUrl + "5-3.jpg"
+                    ProductImage_Image = baseImageUrl + "/5-3.jpg"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 29,
                     ProductLine_ID = 5,
-                    ProductImage_Image = baseImageUrl + "5-4.jpg"
+                    ProductImage_Image = baseImageUrl + "/5-4.jpg"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 30,
                     ProductLine_ID = 5,
-                    ProductImage_Image = baseImageUrl + "5-5.jpg"
+                    ProductImage_Image = baseImageUrl + "/5-5.jpg"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 31,
                     ProductLine_ID = 5,
-                    ProductImage_Image = baseImageUrl + "5-6.jpg"
+                    ProductImage_Image = baseImageUrl + "/5-6.jpg"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 32,
                     ProductLine_ID = 5,
-                    ProductImage_Image = baseImageUrl + "5-7.jpg"
+                    ProductImage_Image = baseImageUrl + "/5-7.jpg"
                 },
                 new ProductImage()
                 {
@@ -871,229 +871,229 @@ namespace Lulus.Data.EF
                 {
                     ProductImage_ID = 37,
                     ProductLine_ID = 7,
-                    ProductImage_Image = baseImageUrl + "7-0.jpg"
+                    ProductImage_Image = baseImageUrl + "/7-0.jpg"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 38,
                     ProductLine_ID = 7,
-                    ProductImage_Image = baseImageUrl + "7-1.jpg"
+                    ProductImage_Image = baseImageUrl + "/7-1.jpg"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 39,
                     ProductLine_ID = 7,
-                    ProductImage_Image = baseImageUrl + "7-2.jpg"
+                    ProductImage_Image = baseImageUrl + "/7-2.jpg"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 40,
                     ProductLine_ID = 7,
-                    ProductImage_Image = baseImageUrl + "7-3.jpg"
+                    ProductImage_Image = baseImageUrl + "/7-3.jpg"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 41,
                     ProductLine_ID = 7,
-                    ProductImage_Image = baseImageUrl + "7-4.jpg"
+                    ProductImage_Image = baseImageUrl + "/7-4.jpg"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 42,
                     ProductLine_ID = 7,
-                    ProductImage_Image = baseImageUrl + "7-5.jpg"
+                    ProductImage_Image = baseImageUrl + "/7-5.jpg"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 43,
                     ProductLine_ID = 8,
-                    ProductImage_Image = baseImageUrl + "8-0.png"
+                    ProductImage_Image = baseImageUrl + "/8-0.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 44,
                     ProductLine_ID = 8,
-                    ProductImage_Image = baseImageUrl + "8-1.png"
+                    ProductImage_Image = baseImageUrl + "/8-1.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 45,
                     ProductLine_ID = 8,
-                    ProductImage_Image = baseImageUrl + "8-2.png"
+                    ProductImage_Image = baseImageUrl + "/8-2.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 46,
                     ProductLine_ID = 8,
-                    ProductImage_Image = baseImageUrl + "8-3.png"
+                    ProductImage_Image = baseImageUrl + "/8-3.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 47,
                     ProductLine_ID = 8,
-                    ProductImage_Image = baseImageUrl + "8-4.png"
+                    ProductImage_Image = baseImageUrl + "/8-4.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 48,
                     ProductLine_ID = 8,
-                    ProductImage_Image = baseImageUrl + "8-5.png"
+                    ProductImage_Image = baseImageUrl + "/8-5.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 49,
                     ProductLine_ID = 8,
-                    ProductImage_Image = baseImageUrl + "8-6.png"
+                    ProductImage_Image = baseImageUrl + "/8-6.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 50,
                     ProductLine_ID = 8,
-                    ProductImage_Image = baseImageUrl + "8-7.png"
+                    ProductImage_Image = baseImageUrl + "/8-7.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 51,
                     ProductLine_ID = 8,
-                    ProductImage_Image = baseImageUrl + "8-8.png"
+                    ProductImage_Image = baseImageUrl + "/8-8.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 52,
                     ProductLine_ID = 8,
-                    ProductImage_Image = baseImageUrl + "8-9.png"
+                    ProductImage_Image = baseImageUrl + "/8-9.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 53,
                     ProductLine_ID = 8,
-                    ProductImage_Image = baseImageUrl + "8-10.png"
+                    ProductImage_Image = baseImageUrl + "/8-10.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 54,
                     ProductLine_ID = 9,
-                    ProductImage_Image = baseImageUrl + "9-0.png"
+                    ProductImage_Image = baseImageUrl + "/9-0.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 55,
                     ProductLine_ID = 9,
-                    ProductImage_Image = baseImageUrl + "9-1.png"
+                    ProductImage_Image = baseImageUrl + "/9-1.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 56,
                     ProductLine_ID = 9,
-                    ProductImage_Image = baseImageUrl + "9-2.png"
+                    ProductImage_Image = baseImageUrl + "/9-2.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 57,
                     ProductLine_ID = 9,
-                    ProductImage_Image = baseImageUrl + "9-3.png"
+                    ProductImage_Image = baseImageUrl + "/9-3.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 58,
                     ProductLine_ID = 9,
-                    ProductImage_Image = baseImageUrl + "9-4.png"
+                    ProductImage_Image = baseImageUrl + "/9-4.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 59,
                     ProductLine_ID = 10,
-                    ProductImage_Image = baseImageUrl + "10-0.png"
+                    ProductImage_Image = baseImageUrl + "/10-0.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 60,
                     ProductLine_ID = 10,
-                    ProductImage_Image = baseImageUrl + "10-1.png"
+                    ProductImage_Image = baseImageUrl + "/10-1.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 61,
                     ProductLine_ID = 10,
-                    ProductImage_Image = baseImageUrl + "10-2.png"
+                    ProductImage_Image = baseImageUrl + "/10-2.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 62,
                     ProductLine_ID = 10,
-                    ProductImage_Image = baseImageUrl + "10-3.png"
+                    ProductImage_Image = baseImageUrl + "/10-3.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 63,
                     ProductLine_ID = 11,
-                    ProductImage_Image = baseImageUrl + "11-0.png"
+                    ProductImage_Image = baseImageUrl + "/11-0.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 64,
                     ProductLine_ID = 11,
-                    ProductImage_Image = baseImageUrl + "11-1.jpg"
+                    ProductImage_Image = baseImageUrl + "/11-1.jpg"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 65,
                     ProductLine_ID = 11,
-                    ProductImage_Image = baseImageUrl + "11-2.png"
+                    ProductImage_Image = baseImageUrl + "/11-2.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 66,
                     ProductLine_ID = 11,
-                    ProductImage_Image = baseImageUrl + "11-3.png"
+                    ProductImage_Image = baseImageUrl + "/11-3.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 67,
                     ProductLine_ID = 11,
-                    ProductImage_Image = baseImageUrl + "11-4.png"
+                    ProductImage_Image = baseImageUrl + "/11-4.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 68,
                     ProductLine_ID = 12,
-                    ProductImage_Image = baseImageUrl + "12-0.png"
+                    ProductImage_Image = baseImageUrl + "/12-0.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 69,
                     ProductLine_ID = 12,
-                    ProductImage_Image = baseImageUrl + "12-1.png"
+                    ProductImage_Image = baseImageUrl + "/12-1.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 70,
                     ProductLine_ID = 12,
-                    ProductImage_Image = baseImageUrl + "12-2.png"
+                    ProductImage_Image = baseImageUrl + "/12-2.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 71,
                     ProductLine_ID = 12,
-                    ProductImage_Image = baseImageUrl + "12-3.png"
+                    ProductImage_Image = baseImageUrl + "/12-3.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 72,
                     ProductLine_ID = 12,
-                    ProductImage_Image = baseImageUrl + "12-4.png"
+                    ProductImage_Image = baseImageUrl + "/12-4.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 73,
                     ProductLine_ID = 13,
-                    ProductImage_Image = baseImageUrl + "13-0.png"
+                    ProductImage_Image = baseImageUrl + "/13-0.png"
                 },
                 new ProductImage()
                 {
                     ProductImage_ID = 74,
                     ProductLine_ID = 13,
-                    ProductImage_Image = baseImageUrl + "13-1.png"
+                    ProductImage_Image = baseImageUrl + "/13-1.png"
                 }
                 );
             modelBuilder.Entity<LineQuantity>().HasData(
