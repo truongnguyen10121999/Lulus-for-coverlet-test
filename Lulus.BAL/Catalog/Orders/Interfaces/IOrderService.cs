@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lulus.ViewModels.Order;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,8 @@ namespace Lulus.BAL.Catalog.Orders.Interfaces
 {
     public interface IOrderService
     {
-        Task<bool> GetCurrentOrderAsync();
-        Task<bool> AddProductAsync();
+        Task<CurrentCartRespond> GetCurrentOrderAsync(Guid userID);
+        Task<int> AddProductAsync(AddProductToCartRequest request);
         Task<bool> RemoveProductAsync();
         Task<bool> ClearCartAsync();
         Task<bool> ChangeQuantityAsync();

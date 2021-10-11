@@ -21,6 +21,7 @@ namespace Lulus.Data.Configurations
 
             builder.HasOne(x => x.Order).WithMany(x => x.OrderDetails).HasForeignKey(x => x.Order_ID);
             builder.HasOne(x => x.ProductLine).WithMany(x => x.OrderDetails).HasForeignKey(x => x.ProductLine_ID);
+            builder.HasOne(x => x.Size).WithMany(x => x.OrderDetails).HasForeignKey(x => x.Size_ID);
         }
     }
 }
