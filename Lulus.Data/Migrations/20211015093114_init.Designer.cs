@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Lulus.Data.Migrations
 {
     [DbContext(typeof(LulusDBContext))]
-    [Migration("20211006095902_init")]
+    [Migration("20211015093114_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -743,7 +743,7 @@ namespace Lulus.Data.Migrations
                     b.Property<int>("Status")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasDefaultValue(0);
+                        .HasDefaultValue(1);
 
                     b.Property<Guid>("User_ID")
                         .HasColumnType("uniqueidentifier");
@@ -778,11 +778,16 @@ namespace Lulus.Data.Migrations
                     b.Property<int>("ProductLine_ID")
                         .HasColumnType("int");
 
+                    b.Property<int>("Size_ID")
+                        .HasColumnType("int");
+
                     b.HasKey("OrderDetail_ID");
 
                     b.HasIndex("Order_ID");
 
                     b.HasIndex("ProductLine_ID");
+
+                    b.HasIndex("Size_ID");
 
                     b.ToTable("OrderDetails");
                 });
@@ -928,13 +933,13 @@ namespace Lulus.Data.Migrations
                         new
                         {
                             ProductImage_ID = 4,
-                            ProductImage_Image = "/Images/Product/1-3.jpg",
+                            ProductImage_Image = "/Images/Product/1-3.png",
                             ProductLine_ID = 1
                         },
                         new
                         {
                             ProductImage_ID = 5,
-                            ProductImage_Image = "/Images/Product/1-4.jpg",
+                            ProductImage_Image = "/Images/Product/1-4.png",
                             ProductLine_ID = 1
                         },
                         new
@@ -1385,8 +1390,8 @@ namespace Lulus.Data.Migrations
                         new
                         {
                             ProductLine_ID = 1,
-                            ProductLine_CreatedDate = new DateTime(2021, 10, 6, 16, 59, 1, 294, DateTimeKind.Local).AddTicks(3576),
-                            ProductLine_UpdatedDate = new DateTime(2021, 10, 6, 16, 59, 1, 295, DateTimeKind.Local).AddTicks(8138),
+                            ProductLine_CreatedDate = new DateTime(2021, 10, 15, 16, 31, 13, 676, DateTimeKind.Local).AddTicks(2862),
+                            ProductLine_UpdatedDate = new DateTime(2021, 10, 15, 16, 31, 13, 677, DateTimeKind.Local).AddTicks(2242),
                             Product_ID = 1,
                             Texture_Image = "/Images/Product/texture/navy-blue.png",
                             Texture_Name = "Navy Blue"
@@ -1394,8 +1399,8 @@ namespace Lulus.Data.Migrations
                         new
                         {
                             ProductLine_ID = 2,
-                            ProductLine_CreatedDate = new DateTime(2021, 10, 6, 16, 59, 1, 295, DateTimeKind.Local).AddTicks(9352),
-                            ProductLine_UpdatedDate = new DateTime(2021, 10, 6, 16, 59, 1, 295, DateTimeKind.Local).AddTicks(9357),
+                            ProductLine_CreatedDate = new DateTime(2021, 10, 15, 16, 31, 13, 677, DateTimeKind.Local).AddTicks(3122),
+                            ProductLine_UpdatedDate = new DateTime(2021, 10, 15, 16, 31, 13, 677, DateTimeKind.Local).AddTicks(3127),
                             Product_ID = 1,
                             Texture_Image = "/Images/Product/texture/green.png",
                             Texture_Name = "Green"
@@ -1403,8 +1408,8 @@ namespace Lulus.Data.Migrations
                         new
                         {
                             ProductLine_ID = 3,
-                            ProductLine_CreatedDate = new DateTime(2021, 10, 6, 16, 59, 1, 295, DateTimeKind.Local).AddTicks(9361),
-                            ProductLine_UpdatedDate = new DateTime(2021, 10, 6, 16, 59, 1, 295, DateTimeKind.Local).AddTicks(9363),
+                            ProductLine_CreatedDate = new DateTime(2021, 10, 15, 16, 31, 13, 677, DateTimeKind.Local).AddTicks(3130),
+                            ProductLine_UpdatedDate = new DateTime(2021, 10, 15, 16, 31, 13, 677, DateTimeKind.Local).AddTicks(3131),
                             Product_ID = 2,
                             Texture_Image = "/Images/Product/texture/mustard-yellow-floral-print.jpg",
                             Texture_Name = "Mustard Yellow Floral Print"
@@ -1412,8 +1417,8 @@ namespace Lulus.Data.Migrations
                         new
                         {
                             ProductLine_ID = 4,
-                            ProductLine_CreatedDate = new DateTime(2021, 10, 6, 16, 59, 1, 295, DateTimeKind.Local).AddTicks(9366),
-                            ProductLine_UpdatedDate = new DateTime(2021, 10, 6, 16, 59, 1, 295, DateTimeKind.Local).AddTicks(9368),
+                            ProductLine_CreatedDate = new DateTime(2021, 10, 15, 16, 31, 13, 677, DateTimeKind.Local).AddTicks(3133),
+                            ProductLine_UpdatedDate = new DateTime(2021, 10, 15, 16, 31, 13, 677, DateTimeKind.Local).AddTicks(3134),
                             Product_ID = 2,
                             Texture_Image = "/Images/Product/texture/red-floral-print.png",
                             Texture_Name = "Red Floral Print"
@@ -1421,8 +1426,8 @@ namespace Lulus.Data.Migrations
                         new
                         {
                             ProductLine_ID = 5,
-                            ProductLine_CreatedDate = new DateTime(2021, 10, 6, 16, 59, 1, 295, DateTimeKind.Local).AddTicks(9372),
-                            ProductLine_UpdatedDate = new DateTime(2021, 10, 6, 16, 59, 1, 295, DateTimeKind.Local).AddTicks(9373),
+                            ProductLine_CreatedDate = new DateTime(2021, 10, 15, 16, 31, 13, 677, DateTimeKind.Local).AddTicks(3137),
+                            ProductLine_UpdatedDate = new DateTime(2021, 10, 15, 16, 31, 13, 677, DateTimeKind.Local).AddTicks(3138),
                             Product_ID = 2,
                             Texture_Image = "/Images/Product/texture/navy-blue-floral-print.jpg",
                             Texture_Name = "Navy Blue Floral Print"
@@ -1430,8 +1435,8 @@ namespace Lulus.Data.Migrations
                         new
                         {
                             ProductLine_ID = 6,
-                            ProductLine_CreatedDate = new DateTime(2021, 10, 6, 16, 59, 1, 295, DateTimeKind.Local).AddTicks(9376),
-                            ProductLine_UpdatedDate = new DateTime(2021, 10, 6, 16, 59, 1, 295, DateTimeKind.Local).AddTicks(9378),
+                            ProductLine_CreatedDate = new DateTime(2021, 10, 15, 16, 31, 13, 677, DateTimeKind.Local).AddTicks(3141),
+                            ProductLine_UpdatedDate = new DateTime(2021, 10, 15, 16, 31, 13, 677, DateTimeKind.Local).AddTicks(3142),
                             Product_ID = 3,
                             Texture_Image = "/Images/Product/texture/red.png",
                             Texture_Name = "Red"
@@ -1439,8 +1444,8 @@ namespace Lulus.Data.Migrations
                         new
                         {
                             ProductLine_ID = 7,
-                            ProductLine_CreatedDate = new DateTime(2021, 10, 6, 16, 59, 1, 295, DateTimeKind.Local).AddTicks(9383),
-                            ProductLine_UpdatedDate = new DateTime(2021, 10, 6, 16, 59, 1, 295, DateTimeKind.Local).AddTicks(9384),
+                            ProductLine_CreatedDate = new DateTime(2021, 10, 15, 16, 31, 13, 677, DateTimeKind.Local).AddTicks(3144),
+                            ProductLine_UpdatedDate = new DateTime(2021, 10, 15, 16, 31, 13, 677, DateTimeKind.Local).AddTicks(3145),
                             Product_ID = 3,
                             Texture_Image = "/Images/Product/texture/white.png",
                             Texture_Name = "White"
@@ -1448,8 +1453,8 @@ namespace Lulus.Data.Migrations
                         new
                         {
                             ProductLine_ID = 8,
-                            ProductLine_CreatedDate = new DateTime(2021, 10, 6, 16, 59, 1, 295, DateTimeKind.Local).AddTicks(9388),
-                            ProductLine_UpdatedDate = new DateTime(2021, 10, 6, 16, 59, 1, 295, DateTimeKind.Local).AddTicks(9390),
+                            ProductLine_CreatedDate = new DateTime(2021, 10, 15, 16, 31, 13, 677, DateTimeKind.Local).AddTicks(3147),
+                            ProductLine_UpdatedDate = new DateTime(2021, 10, 15, 16, 31, 13, 677, DateTimeKind.Local).AddTicks(3148),
                             Product_ID = 4,
                             Texture_Image = "/Images/Product/texture/royal-white.jpg",
                             Texture_Name = "Royal White"
@@ -1457,8 +1462,8 @@ namespace Lulus.Data.Migrations
                         new
                         {
                             ProductLine_ID = 9,
-                            ProductLine_CreatedDate = new DateTime(2021, 10, 6, 16, 59, 1, 295, DateTimeKind.Local).AddTicks(9394),
-                            ProductLine_UpdatedDate = new DateTime(2021, 10, 6, 16, 59, 1, 295, DateTimeKind.Local).AddTicks(9395),
+                            ProductLine_CreatedDate = new DateTime(2021, 10, 15, 16, 31, 13, 677, DateTimeKind.Local).AddTicks(3150),
+                            ProductLine_UpdatedDate = new DateTime(2021, 10, 15, 16, 31, 13, 677, DateTimeKind.Local).AddTicks(3151),
                             Product_ID = 4,
                             Texture_Image = "/Images/Product/texture/royal-blue.jpg",
                             Texture_Name = "Royal Blue"
@@ -1466,8 +1471,8 @@ namespace Lulus.Data.Migrations
                         new
                         {
                             ProductLine_ID = 10,
-                            ProductLine_CreatedDate = new DateTime(2021, 10, 6, 16, 59, 1, 295, DateTimeKind.Local).AddTicks(9399),
-                            ProductLine_UpdatedDate = new DateTime(2021, 10, 6, 16, 59, 1, 295, DateTimeKind.Local).AddTicks(9401),
+                            ProductLine_CreatedDate = new DateTime(2021, 10, 15, 16, 31, 13, 677, DateTimeKind.Local).AddTicks(3154),
+                            ProductLine_UpdatedDate = new DateTime(2021, 10, 15, 16, 31, 13, 677, DateTimeKind.Local).AddTicks(3155),
                             Product_ID = 5,
                             Texture_Image = "/Images/Product/texture/burgundy.png",
                             Texture_Name = "Burgundy"
@@ -1475,8 +1480,8 @@ namespace Lulus.Data.Migrations
                         new
                         {
                             ProductLine_ID = 11,
-                            ProductLine_CreatedDate = new DateTime(2021, 10, 6, 16, 59, 1, 295, DateTimeKind.Local).AddTicks(9403),
-                            ProductLine_UpdatedDate = new DateTime(2021, 10, 6, 16, 59, 1, 295, DateTimeKind.Local).AddTicks(9405),
+                            ProductLine_CreatedDate = new DateTime(2021, 10, 15, 16, 31, 13, 677, DateTimeKind.Local).AddTicks(3157),
+                            ProductLine_UpdatedDate = new DateTime(2021, 10, 15, 16, 31, 13, 677, DateTimeKind.Local).AddTicks(3158),
                             Product_ID = 6,
                             Texture_Image = "/Images/Product/texture/purple.jpg",
                             Texture_Name = "Purple"
@@ -1484,8 +1489,8 @@ namespace Lulus.Data.Migrations
                         new
                         {
                             ProductLine_ID = 12,
-                            ProductLine_CreatedDate = new DateTime(2021, 10, 6, 16, 59, 1, 295, DateTimeKind.Local).AddTicks(9407),
-                            ProductLine_UpdatedDate = new DateTime(2021, 10, 6, 16, 59, 1, 295, DateTimeKind.Local).AddTicks(9409),
+                            ProductLine_CreatedDate = new DateTime(2021, 10, 15, 16, 31, 13, 677, DateTimeKind.Local).AddTicks(3160),
+                            ProductLine_UpdatedDate = new DateTime(2021, 10, 15, 16, 31, 13, 677, DateTimeKind.Local).AddTicks(3161),
                             Product_ID = 6,
                             Texture_Image = "/Images/Product/texture/burgundy.png",
                             Texture_Name = "Burgundy"
@@ -1493,8 +1498,8 @@ namespace Lulus.Data.Migrations
                         new
                         {
                             ProductLine_ID = 13,
-                            ProductLine_CreatedDate = new DateTime(2021, 10, 6, 16, 59, 1, 295, DateTimeKind.Local).AddTicks(9411),
-                            ProductLine_UpdatedDate = new DateTime(2021, 10, 6, 16, 59, 1, 295, DateTimeKind.Local).AddTicks(9413),
+                            ProductLine_CreatedDate = new DateTime(2021, 10, 15, 16, 31, 13, 677, DateTimeKind.Local).AddTicks(3163),
+                            ProductLine_UpdatedDate = new DateTime(2021, 10, 15, 16, 31, 13, 677, DateTimeKind.Local).AddTicks(3164),
                             Product_ID = 6,
                             Texture_Image = "/Images/Product/texture/green.png",
                             Texture_Name = "Green"
@@ -1964,7 +1969,7 @@ namespace Lulus.Data.Migrations
                         {
                             Id = new Guid("61ae2038-97f2-45e5-91ae-08d961fa9be8"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "78f0b2b7-2c3e-435e-87f3-2996d48e26b1",
+                            ConcurrencyStamp = "647c875a-9046-4a41-805a-872b5cf7f393",
                             Customer_Address = "22 St. Wall Street, Brooklyn, American",
                             Customer_FirstName = "Anna",
                             Customer_LastName = "Lee",
@@ -1973,7 +1978,7 @@ namespace Lulus.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ANNALEE@SHOP.COM",
                             NormalizedUserName = "ANNALEE",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIUb0BT1JB2uuZpn2k3W78X5+f7XMEhHvSwkWc9V6ISnSyzLjwUVQQJlsW88YcfJyg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAECUnSFgAdqMUOlGoSmUgmTqtEYAbix2ZgTF9bCShcnoRVdVq7Dh4C7ahjwn/yh6eiw==",
                             PhoneNumber = "012545454541",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "NQLC7NG4A7DTOJ5DETPA35OHKTOZMMYP",
@@ -2013,14 +2018,14 @@ namespace Lulus.Data.Migrations
                         new
                         {
                             Id = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
-                            ConcurrencyStamp = "9f9523e0-1974-4226-81bc-9393c13e806a",
+                            ConcurrencyStamp = "6aea4f4c-f599-4992-a5c3-3f6895ef6318",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = new Guid("54ba416f-6b89-4c53-873d-4fbd48506e6d"),
-                            ConcurrencyStamp = "7a07a9b2-a7e2-43e3-82d0-215176e2db70",
+                            ConcurrencyStamp = "faf700fe-2a42-46d2-a6fe-f31373586189",
                             Name = "Customer",
                             NormalizedName = "CUSTOMER"
                         });
@@ -2197,9 +2202,17 @@ namespace Lulus.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Lulus.Data.Entities.Size", "Size")
+                        .WithMany("OrderDetails")
+                        .HasForeignKey("Size_ID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Order");
 
                     b.Navigation("ProductLine");
+
+                    b.Navigation("Size");
                 });
 
             modelBuilder.Entity("Lulus.Data.Entities.Product", b =>
@@ -2326,6 +2339,8 @@ namespace Lulus.Data.Migrations
             modelBuilder.Entity("Lulus.Data.Entities.Size", b =>
                 {
                     b.Navigation("LineQuantities");
+
+                    b.Navigation("OrderDetails");
                 });
 
             modelBuilder.Entity("Lulus.Data.Entities.SubCategory", b =>
