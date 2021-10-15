@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Lulus.CustomerApp.Services.Interfaces
 {
-    interface IOrderApi
+    public interface IOrderApi
     {
-        Task<CurrentCartRespond> GetCurrentCart(Guid userID);
+        Task<CurrentCartRespond> GetCurrentCart();
         Task<string> AddProduct(AddProductToCartRequest request);
     }
 }

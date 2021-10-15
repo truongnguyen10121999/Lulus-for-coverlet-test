@@ -20,11 +20,6 @@ namespace Lulus.BAL.Catalog.Orders
 
         public async Task<int> AddProductAsync(AddProductToCartRequest request)
         {
-            // Invalid 1: User not found
-            if (!(await UserIDValid(request.UserID))) return 1;
-            // Invalid 2: Order not found
-            var order = await _context.Orders.Where(x => x.Order_ID == request.OrderID).FirstOrDefaultAsync();
-            if (order == null) return 2;
             // Invalid 3: Product line not found
             var line = await _context.ProductLines.Where(x => x.ProductLine_ID == request.ProductLineID).FirstOrDefaultAsync();
             if (line == null) return 3;
@@ -32,7 +27,8 @@ namespace Lulus.BAL.Catalog.Orders
             var size = await _context.Sizes.Where(x => x.Size_ID == request.SizeID).FirstOrDefaultAsync();
             if (size == null) return 4;
             var quantity = await _context.LineQuantities.Where(x => x.ProductLine_ID == request.ProductLineID && x.Size_ID == request.SizeID).Select(x => x.Quantity).FirstOrDefaultAsync();
-            var checkExist = await _context.OrderDetails.Where(x => x.Order_ID == request.OrderID && x.ProductLine_ID == request.ProductLineID &&x.Size_ID == request.SizeID).FirstOrDefaultAsync();
+            var orderID = await GetCurrentCartIDAsync(request.UserID);
+            var checkExist = await _context.OrderDetails.Where(x => x.Order_ID == orderID && x.ProductLine_ID == request.ProductLineID &&x.Size_ID == request.SizeID).FirstOrDefaultAsync();
             if(checkExist != null)
             {
                 // Invalid 5: Dont have enough product quantity
@@ -49,7 +45,7 @@ namespace Lulus.BAL.Catalog.Orders
                 _context.OrderDetails.Add(new Data.Entities.OrderDetail()
                 {
                     OrderDetail_Quantity = request.Quantity,
-                    Order_ID = request.OrderID,
+                    Order_ID = orderID,
                     ProductLine_ID = request.ProductLineID,
                     Size_ID = request.SizeID,
                     OrderDetail_Total = price * request.Quantity
@@ -82,10 +78,6 @@ namespace Lulus.BAL.Catalog.Orders
 
         public async Task<CurrentCartRespond> GetCurrentOrderAsync(Guid userID)
         {
-            if(!(await UserIDValid(userID)))
-            {
-                return null;
-            }
             var order = await _context.Orders.Where(x => x.User_ID == userID && x.Status == Data.Enums.OrderStatus.Choosing).FirstOrDefaultAsync();
             if(order == null)
             {
@@ -150,6 +142,24 @@ namespace Lulus.BAL.Catalog.Orders
             var user = await _context.Users.Where(x => x.Id == userID).FirstOrDefaultAsync();
             if (user == null) return false;
             return true;
+        }
+        private async Task<int> GetCurrentCartIDAsync(Guid userID)
+        {
+            var order = await _context.Orders.Where(x => x.User_ID == userID && x.Status == Data.Enums.OrderStatus.Choosing).FirstOrDefaultAsync();
+            if (order == null)
+            {
+                var createdOrder = new Data.Entities.Order()
+                {
+                    CreatedDate = DateTime.Now,
+                    Order_Total = 0,
+                    User_ID = userID,
+                    Status = Data.Enums.OrderStatus.Choosing
+                };
+                _context.Orders.Add(createdOrder);
+                await _context.SaveChangesAsync();
+                return await _context.Orders.Where(x => x.User_ID == userID && x.Status == Data.Enums.OrderStatus.Choosing).Select(x =>x.Order_ID).FirstOrDefaultAsync();
+            }
+            return order.Order_ID;
         }
     }
 }

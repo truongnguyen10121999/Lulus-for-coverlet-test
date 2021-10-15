@@ -9,7 +9,6 @@ namespace Lulus.ViewModels.Order
     public class AddProductToCartRequest
     {
         public Guid UserID { get; set; }
-        public int OrderID { get; set; }
         public int ProductLineID { get; set; }
         public int Quantity { get; set; }
         public int SizeID { get; set; }
