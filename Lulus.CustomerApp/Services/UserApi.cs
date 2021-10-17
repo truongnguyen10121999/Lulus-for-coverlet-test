@@ -1,4 +1,5 @@
-﻿using Lulus.CustomerApp.Services.Interfaces;
+﻿using Lulus.CustomerApp.Infrastructures.User;
+using Lulus.CustomerApp.Services.Interfaces;
 using Lulus.ViewModels.Users;
 using Newtonsoft.Json;
 using System;
@@ -27,6 +28,8 @@ namespace Lulus.CustomerApp.Services
             var respond = await client.PostAsync("/api/User/Authenticate", httpcontent);
 
             var token = await respond.Content.ReadAsStringAsync();
+            UserSingleton.Init(token);
+            UserSingleton.GetInstance();
             return token;
         }
         public async Task<bool> Register(RegisterRequest request)

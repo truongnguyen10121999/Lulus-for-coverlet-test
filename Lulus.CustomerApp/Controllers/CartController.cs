@@ -17,7 +17,7 @@ namespace Lulus.CustomerApp.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var currentCart = await _orderApi.GetCurrentCart();
+            var currentCart = await _orderApi.GetCurrentCart(new Guid(HttpContext.User.Claims.First().Value));
             return View(currentCart);
         }
         public async Task<IActionResult> AddProduct(string id)
@@ -25,7 +25,7 @@ namespace Lulus.CustomerApp.Controllers
             string[] t = id.Split(",");
             var request = new AddProductToCartRequest
             {
-                UserID = new Guid(),
+                UserID = new Guid(HttpContext.User.Claims.First().Value),
                 ProductLineID = int.Parse(t[0]),
                 SizeID = int.Parse(t[1]),
                 Quantity = int.Parse(t[2])

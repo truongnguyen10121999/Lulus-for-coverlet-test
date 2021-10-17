@@ -29,7 +29,6 @@ using Lulus.BAL.Catalog.ProductLines.Interfaces;
 using Lulus.BAL.Catalog.ProductLines;
 using Lulus.BAL.Catalog.Orders.Interfaces;
 using Lulus.BAL.Catalog.Orders;
-using Lulus.BackendApi.Infrastructures;
 
 namespace Lulus.BackendApi
 {
@@ -63,7 +62,6 @@ namespace Lulus.BackendApi
             services.AddTransient<IManageProductLineService, ManageProductLineService>();
             services.AddTransient<IManageSubcategoryService, ManageSubcategoryService>();
             services.AddTransient<IOrderService, OrderService>();
-            services.AddTransient<ICurrentUser, CurrentUser>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

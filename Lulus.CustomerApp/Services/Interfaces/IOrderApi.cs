@@ -8,7 +8,7 @@ namespace Lulus.CustomerApp.Services.Interfaces
 {
     public interface IOrderApi
     {
-        Task<CurrentCartRespond> GetCurrentCart();
+        Task<CurrentCartRespond> GetCurrentCart(Guid userID);
         Task<string> AddProduct(AddProductToCartRequest request);
     }
 }

@@ -1,5 +1,4 @@
-﻿using Lulus.BackendApi.Infrastructures;
-using Lulus.BAL.Catalog.Orders.Interfaces;
+﻿using Lulus.BAL.Catalog.Orders.Interfaces;
 using Lulus.ViewModels.Order;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -12,19 +11,18 @@ namespace Lulus.BackendApi.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
+    [Authorize]
     public class OrderController : Controller
     {
         private readonly IOrderService _service;
-        private readonly ICurrentUser _currentUser;
-        public OrderController(IOrderService service, ICurrentUser currentUser)
+        public OrderController(IOrderService service)
         {
             _service = service;
-            _currentUser = currentUser;
         }
-        [HttpGet]
-        public async Task<IActionResult> GetCurrentCart()
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetCurrentCart(Guid id)
         {
-            var result = await _service.GetCurrentOrderAsync(_currentUser.UserId);
+            var result = await _service.GetCurrentOrderAsync(id);
             if(result == null)
             {
                 return BadRequest("User not found");
@@ -34,15 +32,9 @@ namespace Lulus.BackendApi.Controllers
         [HttpPost]
         public async Task<IActionResult> AddProduct(AddProductToCartRequest request)
         {
-            var requestAlter = new AddProductToCartRequest()
-            {
-                UserID = _currentUser.UserId,
-                ProductLineID = request.ProductLineID,
-                SizeID = request.SizeID,
-                Quantity = request.Quantity
-            };
+
             //request.UserID = _currentUser.UserId;
-            var result = await _service.AddProductAsync(requestAlter);
+            var result = await _service.AddProductAsync(request);
             switch (result)
             {
                 case 1: return BadRequest("User not found");
