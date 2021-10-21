@@ -103,6 +103,29 @@ namespace Lulus.CustomerApp.Controllers
             };
             return View(product);
         }
+        public async Task<IActionResult> DetailChoosing(int id, int line, int size, int quantity)
+        {
+            var detail = await _productApi.GetDetailByID(new GetProductDetailRequest(id));
+            if (line == 0)
+            {
+                line = detail.ListProductLines[0].ID;
+            }
+            var product = new DetailProductModel()
+            {
+                ID = detail.ID,
+                Name = detail.Name,
+                Price = detail.Price,
+                SalePrice = detail.SalePrice,
+                Description = detail.Description,
+                Status = detail.Status,
+                ListProductLines = detail.ListProductLines,
+                ListFeedbacks = detail.ListFeedbacks,
+                CurrentLine = line,
+                CurrentQuantity = quantity,
+                CurrentSizeID = size
+            };
+            return View("Details", product);
+        }
         [HttpPost]
         public async Task<IActionResult> Rating(CreateFeedbackRequest request)
         {
