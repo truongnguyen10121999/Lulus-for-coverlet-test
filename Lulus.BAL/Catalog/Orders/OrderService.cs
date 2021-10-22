@@ -76,7 +76,7 @@ namespace Lulus.BAL.Catalog.Orders
             if (order == null) return false;
             order.Status = Data.Enums.OrderStatus.New;
             await _context.SaveChangesAsync();
-            return true
+            return true;
         }
 
         public async Task<bool> ClearCartAsync(int orderID)

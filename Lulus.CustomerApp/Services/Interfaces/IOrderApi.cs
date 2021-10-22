@@ -10,5 +10,10 @@ namespace Lulus.CustomerApp.Services.Interfaces
     {
         Task<CurrentCartRespond> GetCurrentCart(Guid userID);
         Task<string> AddProduct(AddProductToCartRequest request);
+        Task<bool> RemoveProduct(int orderDetailID);
+        Task<bool> Clear(int orderID);
+        Task<bool> ChangeQuantity(ChangeQuantityRequest request);
+        Task<bool> Checkout(int orderID);
+        Task<CurrentCartRespond> CheckoutInfo(int id);
     }
 }

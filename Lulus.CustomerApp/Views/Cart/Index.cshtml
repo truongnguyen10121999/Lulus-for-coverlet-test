@@ -17,6 +17,7 @@
     }
     else
     {
+        <a asp-controller="Cart" asp-action="ClearCart" asp-route-orderID="@Model.Order_ID">Clear cart</a>
         @foreach (var item in Model.OrderDetails)
         {
             count += item.Product_SellPrice;
@@ -26,14 +27,20 @@
                         <h4>@item.Product_Name</h4>
                         <p>@item.Product_SellPrice$</p>
                         <p>Size @item.SizeKey</p>
-                        <p>Quantity:  <input value="@item.OrderDetail_Quantity" /> <a href="#">Update</a></p>
+                        <p>Quantity:  
+                            <form asp-action="ChangeQuantity" asp-controller="Cart" method="post">
+                                <input name="Id" value="@item.OrderDetail_ID" hidden/>
+                                <input value="@item.OrderDetail_Quantity" name="Quantity"/>
+                                <button type="submit">Update</button>
+                            </form>
+                        </p>
 
                     </div>
                     <div class="col-md-2">
                         <img src="@item.Product_Image" width="100%" height="100%" />
                     </div>
                 </div>
-                <div class="row"><a href="#" class="text-danger">Remove</a></div>
+                <div class="row"><a class="text-danger" asp-controller="Cart" asp-action="RemoveProduct" asp-route-orderDetailID="@item.OrderDetail_ID">Remove</a></div>
             </div>
             <hr />
         }

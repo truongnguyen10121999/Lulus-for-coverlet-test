@@ -47,5 +47,40 @@ namespace Lulus.BackendApi.Controllers
                 default: return BadRequest("Something was wrong");
             }
         }
+        [HttpPost]
+        public async Task<IActionResult> RemoveProduct(int orderDetailID)
+        {
+            var result = await _service.RemoveProductAsync(orderDetailID);
+            if (result == false) return BadRequest();
+            return Ok();
+        }
+        [HttpPost]
+        public async Task<IActionResult> ClearCart(int orderID)
+        {
+            var result = await _service.ClearCartAsync(orderID);
+            if (result == false) return BadRequest();
+            return Ok();
+        }
+        [HttpPost]
+        public async Task<IActionResult> ChangeQuantity(ChangeQuantityRequest request)
+        {
+            var result = await _service.ChangeQuantityAsync(request);
+            if (result == false) return BadRequest();
+            return Ok();
+        }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> CheckoutInfo(int id)
+        {
+            var result = await _service.GetCheckoutInforAsync(id);
+            if (result == null) return BadRequest();
+            return Ok(result);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Checkout(int orderID)
+        {
+            var result = await _service.CheckoutAsync(orderID);
+            if (result == false) return BadRequest();
+            return Ok();
+        }
     }
 }

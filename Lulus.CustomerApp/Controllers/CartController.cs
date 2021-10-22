@@ -35,6 +35,11 @@ namespace Lulus.CustomerApp.Controllers
             if(result == "") return RedirectToAction("AddProductFailed");
             return RedirectToAction("AddProductSuccess");
         }
+        public async Task<IActionResult> ClearCart(int orderID)
+        {
+            var result = await _orderApi.Clear(orderID);
+            return RedirectToAction("Index");
+        }
         public IActionResult AddProductFailed()
         {
             return View();
@@ -42,6 +47,22 @@ namespace Lulus.CustomerApp.Controllers
         public IActionResult AddProductSuccess()
         {
             return View();
+        }
+        public async Task<IActionResult> RemoveProduct(int orderDetailID)
+        {
+            var result = await _orderApi.RemoveProduct(orderDetailID);
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public async Task<IActionResult> ChangeQuantity(int Id, int Quantity)
+        {
+            var request = new ChangeQuantityRequest()
+            {
+                OrderDetailID = Id,
+                Quantity = Quantity
+            };
+            var result = await _orderApi.ChangeQuantity(request);
+            return RedirectToAction("Index");
         }
     }
 }
