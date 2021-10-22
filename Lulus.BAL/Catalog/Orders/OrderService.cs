@@ -56,24 +56,75 @@ namespace Lulus.BAL.Catalog.Orders
             }
         }
 
-        public Task<bool> ChangeQuantityAsync()
+        public async Task<bool> ChangeQuantityAsync(ChangeQuantityRequest request)
         {
-            throw new NotImplementedException();
+            var detail = await _context.OrderDetails.Where(x => x.OrderDetail_ID == request.OrderDetailID).FirstOrDefaultAsync();
+            if (detail == null) return false;
+            var remain = await _context.LineQuantities
+                .Where(x => x.LineQuantity_ID == detail.ProductLine_ID && x.Size_ID == detail.Size_ID)
+                .Select(x => x.Quantity)
+                .FirstOrDefaultAsync();
+            if (request.Quantity >= remain) return false;
+            detail.OrderDetail_Quantity = request.Quantity;
+            await _context.SaveChangesAsync();
+            return true;
         }
 
-        public Task<bool> CheckoutAsync()
+        public async Task<bool> CheckoutAsync(int orderID)
         {
-            throw new NotImplementedException();
+            var order = await _context.Orders.Where(x => x.Order_ID == orderID && x.Status == Data.Enums.OrderStatus.Choosing).FirstOrDefaultAsync();
+            if (order == null) return false;
+            order.Status = Data.Enums.OrderStatus.New;
+            await _context.SaveChangesAsync();
+            return true
         }
 
-        public Task<bool> ClearCartAsync()
+        public async Task<bool> ClearCartAsync(int orderID)
         {
-            throw new NotImplementedException();
+            var order = await _context.Orders.Where(x => x.Order_ID == orderID && x.Status == Data.Enums.OrderStatus.Choosing).FirstOrDefaultAsync();
+            if (order == null) return false;
+            var details = await _context.OrderDetails.Where(x => x.Order_ID == orderID).ToListAsync();
+            foreach(var item in details)
+            {
+                _context.OrderDetails.Remove(item);
+            }
+            await _context.SaveChangesAsync();
+            return true;
         }
 
-        public Task<bool> GetCheckoutInforAsync()
+        public async Task<CurrentCartRespond> GetCheckoutInforAsync(int orderID)
         {
-            throw new NotImplementedException();
+            var order = await _context.Orders.Where(x => x.Order_ID == orderID && x.Status == Data.Enums.OrderStatus.Choosing).FirstOrDefaultAsync();
+            if (order == null) return null;
+            order.OrderDetails = await _context.OrderDetails.Where(x => x.Order_ID == order.Order_ID).ToListAsync();
+            var respondOrder = new CurrentCartRespond()
+            {
+                Order_ID = order.Order_ID,
+                Order_Total = order.OrderDetails.Sum(x => x.OrderDetail_Total),
+                Status = Data.Enums.OrderStatus.Choosing,
+                DetailCount = order.OrderDetails.Count,
+                OrderDetails = new List<OrderDetailInCart>()
+            };
+            foreach (var item in order.OrderDetails)
+            {
+                var line = await _context.ProductLines.Where(x => x.ProductLine_ID == item.ProductLine_ID).Select(x => x.ProductLine_ID).FirstOrDefaultAsync();
+                var product = await _context.Products.Where(x => x.Product_ID == line).FirstOrDefaultAsync();
+                var image = await _context.ProductImages.Where(x => x.ProductLine_ID == item.ProductLine_ID).Select(x => x.ProductImage_Image).FirstAsync();
+                var sizeKey = await _context.Sizes.Where(x => x.Size_ID == item.Size_ID).Select(x => x.Size_Key).FirstAsync();
+                respondOrder.OrderDetails.Add(new OrderDetailInCart()
+                {
+                    OrderDetail_ID = item.OrderDetail_ID,
+                    OrderDetail_Quantity = item.OrderDetail_Quantity,
+                    Product_Name = product.Product_Name,
+                    Product_Image = image,
+                    Product_Price = product.Product_Price,
+                    Product_SellPrice = product.Product_SalePrice,
+                    Status = product.Status,
+                    SizeKey = sizeKey,
+                    OrderDetail_Total = item.OrderDetail_Quantity * product.Product_SalePrice
+                });
+            }
+            return respondOrder;
         }
 
         public async Task<CurrentCartRespond> GetCurrentOrderAsync(Guid userID)
@@ -133,9 +184,15 @@ namespace Lulus.BAL.Catalog.Orders
             }
         }
 
-        public Task<bool> RemoveProductAsync()
+        public async Task<bool> RemoveProductAsync(int orderDetailID)
         {
-            throw new NotImplementedException();
+            var detail = await _context.OrderDetails.Where(x => x.OrderDetail_ID == orderDetailID).FirstOrDefaultAsync();
+            if (detail == null) return false;
+            var order = await _context.Orders.Where(x => x.Order_ID == detail.Order_ID).FirstOrDefaultAsync();
+            if (order.Status != Data.Enums.OrderStatus.Choosing) return false;
+            _context.OrderDetails.Remove(detail);
+            await _context.SaveChangesAsync();
+            return true;
         }
         private async Task<bool> UserIDValid(Guid userID)
         {

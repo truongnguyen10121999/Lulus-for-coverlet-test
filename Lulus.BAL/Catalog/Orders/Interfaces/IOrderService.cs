@@ -11,10 +11,10 @@ namespace Lulus.BAL.Catalog.Orders.Interfaces
     {
         Task<CurrentCartRespond> GetCurrentOrderAsync(Guid userID);
         Task<int> AddProductAsync(AddProductToCartRequest request);
-        Task<bool> RemoveProductAsync();
-        Task<bool> ClearCartAsync();
-        Task<bool> ChangeQuantityAsync();
-        Task<bool> GetCheckoutInforAsync();
-        Task<bool> CheckoutAsync();
+        Task<bool> RemoveProductAsync(int orderDetailID);
+        Task<bool> ClearCartAsync(int orderID);
+        Task<bool> ChangeQuantityAsync(ChangeQuantityRequest request);
+        Task<CurrentCartRespond> GetCheckoutInforAsync(int orderID);
+        Task<bool> CheckoutAsync(int orderID);
     }
 }
