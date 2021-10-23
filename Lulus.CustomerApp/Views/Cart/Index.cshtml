@@ -51,7 +51,7 @@
                 </div>
                 <div class="col-md-2">
                     <h3 style="text-align:right">@count$</h3>
-                    <a href="#" class="btn btn-dark">Checkout</a>
+                    <a class="btn btn-dark" asp-controller="Cart" asp-action="Checkout" asp-route-id="@Model.Order_ID">Checkout</a>
                 </div>
             </div>
         </div>

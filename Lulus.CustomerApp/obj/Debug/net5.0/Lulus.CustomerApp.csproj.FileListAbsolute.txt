@@ -445,3 +445,5 @@ D:\.CanDelete\Git\Lulus-master\Lulus.CustomerApp\obj\Debug\net5.0\Lulus.Customer
 D:\.CanDelete\Git\Lulus-master\Lulus.CustomerApp\obj\Debug\net5.0\Razor\Views\Cart\Index.cshtml.g.cs
 D:\.CanDelete\Git\Lulus-master\Lulus.CustomerApp\obj\Debug\net5.0\Razor\Views\Cart\AddProductFailed.cshtml.g.cs
 D:\.CanDelete\Git\Lulus-master\Lulus.CustomerApp\obj\Debug\net5.0\Razor\Views\Cart\AddProductSuccess.cshtml.g.cs
+D:\.CanDelete\Git\Lulus-master\Lulus.CustomerApp\obj\Debug\net5.0\Razor\Views\Cart\Checkout.cshtml.g.cs
+D:\.CanDelete\Git\Lulus-master\Lulus.CustomerApp\obj\Debug\net5.0\Razor\Views\Cart\Orders.cshtml.g.cs

@@ -53,15 +53,12 @@ namespace Lulus.CustomerApp.Services
 
             return new CurrentCartRespond();
         }
-        public async Task<bool> RemoveProduct(int orderDetailID)
+        public async Task<bool> RemoveProduct(int id)
         {
-            var json = JsonConvert.SerializeObject(orderDetailID);
-            var httpcontent = new StringContent(json, Encoding.UTF8, "application/json");
-
             var client = _httpClientFactory.CreateClient();
             client.BaseAddress = new Uri("https://localhost:44354");
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _userSingleton.GetToken());
-            var respond = await client.PostAsync("/api/Order/RemoveProduct", httpcontent);
+            var respond = await client.DeleteAsync("/api/Order/RemoveProduct/"+id);
             var body = await respond.Content.ReadAsStringAsync();
             if (respond.IsSuccessStatusCode)
             {
@@ -72,13 +69,10 @@ namespace Lulus.CustomerApp.Services
         }
         public async Task<bool> Clear(int orderID)
         {
-            var json = JsonConvert.SerializeObject(orderID);
-            var httpcontent = new StringContent(json, Encoding.UTF8, "application/json");
-
             var client = _httpClientFactory.CreateClient();
             client.BaseAddress = new Uri("https://localhost:44354");
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _userSingleton.GetToken());
-            var respond = await client.PostAsync("/api/Order/ClearCart", httpcontent);
+            var respond = await client.DeleteAsync("/api/Order/ClearCart/"+ orderID);
             var body = await respond.Content.ReadAsStringAsync();
             if (respond.IsSuccessStatusCode)
             {
@@ -106,13 +100,10 @@ namespace Lulus.CustomerApp.Services
         }
         public async Task<bool> Checkout(int orderID)
         {
-            var json = JsonConvert.SerializeObject(orderID);
-            var httpcontent = new StringContent(json, Encoding.UTF8, "application/json");
-
             var client = _httpClientFactory.CreateClient();
             client.BaseAddress = new Uri("https://localhost:44354");
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _userSingleton.GetToken());
-            var respond = await client.PostAsync("/api/Order/Checkout", httpcontent);
+            var respond = await client.GetAsync("/api/Order/Checkout/"+ orderID);
             var body = await respond.Content.ReadAsStringAsync();
             if (respond.IsSuccessStatusCode)
             {
@@ -134,6 +125,21 @@ namespace Lulus.CustomerApp.Services
             }
 
             return new CurrentCartRespond();
+        }
+
+        public async Task<List<OrderRespond>> GetOrders(Guid userID)
+        {
+            var client = _httpClientFactory.CreateClient();
+            client.BaseAddress = new Uri("https://localhost:44354");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _userSingleton.GetToken());
+            var respond = await client.GetAsync("/api/Order/GetOrders/" + userID);
+            var body = await respond.Content.ReadAsStringAsync();
+            if (respond.IsSuccessStatusCode)
+            {
+                return JsonConvert.DeserializeObject<List<OrderRespond>>(body);
+            }
+
+            return new List<OrderRespond>();
         }
     }
 }

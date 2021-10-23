@@ -1,0 +1,19 @@
+﻿@model List<Lulus.ViewModels.Order.OrderRespond>
+<style>
+    .cart {
+        margin-top: 10px;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+</style>
+<div class="cart">
+    @foreach(var item in Model)
+            {
+                <p>Order Key: @item.Order_ID</p>
+                <p>Created Date: @item.CreateDate</p>
+                <p>@item.DetailCount products</p>
+                <p>Status: @item.Status.ToString()</p>
+                <p>Total: @item.Order_Total</p>
+                <hr/>
+            }
+</div>

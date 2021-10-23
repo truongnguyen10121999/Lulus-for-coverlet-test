@@ -61,7 +61,7 @@ namespace Lulus.BAL.Catalog.Orders
             var detail = await _context.OrderDetails.Where(x => x.OrderDetail_ID == request.OrderDetailID).FirstOrDefaultAsync();
             if (detail == null) return false;
             var remain = await _context.LineQuantities
-                .Where(x => x.LineQuantity_ID == detail.ProductLine_ID && x.Size_ID == detail.Size_ID)
+                .Where(x => x.ProductLine_ID == detail.ProductLine_ID && x.Size_ID == detail.Size_ID)
                 .Select(x => x.Quantity)
                 .FirstOrDefaultAsync();
             if (request.Quantity >= remain) return false;
@@ -75,6 +75,8 @@ namespace Lulus.BAL.Catalog.Orders
             var order = await _context.Orders.Where(x => x.Order_ID == orderID && x.Status == Data.Enums.OrderStatus.Choosing).FirstOrDefaultAsync();
             if (order == null) return false;
             order.Status = Data.Enums.OrderStatus.New;
+            order.Order_Total = await _context.OrderDetails.Where(x => x.Order_ID == orderID).SumAsync(x => x.OrderDetail_Total);
+            order.CreatedDate = DateTime.Now;
             await _context.SaveChangesAsync();
             return true;
         }
@@ -143,7 +145,7 @@ namespace Lulus.BAL.Catalog.Orders
                 await _context.SaveChangesAsync();
                 return new CurrentCartRespond()
                 {
-                    Order_ID = (await _context.Orders.Where(x => x.User_ID == userID && x.Status == Data.Enums.OrderStatus.Choosing).FirstOrDefaultAsync()).Order_ID,
+                    Order_ID = createdOrder.Order_ID,
                     Order_Total = 0,
                     Status = Data.Enums.OrderStatus.Choosing,
                     DetailCount = 0,
@@ -217,6 +219,20 @@ namespace Lulus.BAL.Catalog.Orders
                 return await _context.Orders.Where(x => x.User_ID == userID && x.Status == Data.Enums.OrderStatus.Choosing).Select(x =>x.Order_ID).FirstOrDefaultAsync();
             }
             return order.Order_ID;
+        }
+
+        public async Task<List<OrderRespond>> GetOrders(Guid userID)
+        {
+            var order = await _context.Orders.Where(x => x.User_ID == userID && x.Status != Data.Enums.OrderStatus.Choosing)
+                .Select(x => new OrderRespond()
+                {
+                    Order_ID = x.Order_ID,
+                    Order_Total = x.Order_Total,
+                    Status = x.Status,
+                    DetailCount = x.OrderDetails.Count,
+                    CreateDate = x.CreatedDate
+                }).ToListAsync();
+            return order;
         }
     }
 }

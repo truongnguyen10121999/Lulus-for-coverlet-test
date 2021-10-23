@@ -16,5 +16,6 @@ namespace Lulus.BAL.Catalog.Orders.Interfaces
         Task<bool> ChangeQuantityAsync(ChangeQuantityRequest request);
         Task<CurrentCartRespond> GetCheckoutInforAsync(int orderID);
         Task<bool> CheckoutAsync(int orderID);
+        Task<List<OrderRespond>> GetOrders(Guid userID);
     }
 }

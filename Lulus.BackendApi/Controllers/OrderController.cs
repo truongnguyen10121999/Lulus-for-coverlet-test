@@ -23,7 +23,7 @@ namespace Lulus.BackendApi.Controllers
         public async Task<IActionResult> GetCurrentCart(Guid id)
         {
             var result = await _service.GetCurrentOrderAsync(id);
-            if(result == null)
+            if (result == null)
             {
                 return BadRequest("User not found");
             }
@@ -47,17 +47,17 @@ namespace Lulus.BackendApi.Controllers
                 default: return BadRequest("Something was wrong");
             }
         }
-        [HttpPost]
-        public async Task<IActionResult> RemoveProduct(int orderDetailID)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> RemoveProduct(int id)
         {
-            var result = await _service.RemoveProductAsync(orderDetailID);
+            var result = await _service.RemoveProductAsync(id);
             if (result == false) return BadRequest();
             return Ok();
         }
-        [HttpPost]
-        public async Task<IActionResult> ClearCart(int orderID)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> ClearCart(int id)
         {
-            var result = await _service.ClearCartAsync(orderID);
+            var result = await _service.ClearCartAsync(id);
             if (result == false) return BadRequest();
             return Ok();
         }
@@ -75,12 +75,18 @@ namespace Lulus.BackendApi.Controllers
             if (result == null) return BadRequest();
             return Ok(result);
         }
-        [HttpPost]
-        public async Task<IActionResult> Checkout(int orderID)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Checkout(int id)
         {
-            var result = await _service.CheckoutAsync(orderID);
+            var result = await _service.CheckoutAsync(id);
             if (result == false) return BadRequest();
             return Ok();
+        }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetOrders(Guid id)
+        {
+            var result = await _service.GetOrders(id);
+            return Ok(result);
         }
     }
 }

@@ -15,5 +15,6 @@ namespace Lulus.CustomerApp.Services.Interfaces
         Task<bool> ChangeQuantity(ChangeQuantityRequest request);
         Task<bool> Checkout(int orderID);
         Task<CurrentCartRespond> CheckoutInfo(int id);
+        Task<List<OrderRespond>> GetOrders(Guid userID);
     }
 }

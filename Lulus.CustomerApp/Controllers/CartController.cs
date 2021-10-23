@@ -64,5 +64,20 @@ namespace Lulus.CustomerApp.Controllers
             var result = await _orderApi.ChangeQuantity(request);
             return RedirectToAction("Index");
         }
+        public async Task<IActionResult> Checkout(int id)
+        {
+            var result = await _orderApi.CheckoutInfo(id);
+            return View(result);
+        }
+        public async Task<IActionResult> Confirmation(int id)
+        {
+            var result = await _orderApi.Checkout(id);
+            return RedirectToAction("Index");
+        }
+        public async Task<IActionResult> Orders()
+        {
+            var orders = await _orderApi.GetOrders(new Guid(HttpContext.User.Claims.First().Value));
+            return View(orders);
+        }
     }
 }
