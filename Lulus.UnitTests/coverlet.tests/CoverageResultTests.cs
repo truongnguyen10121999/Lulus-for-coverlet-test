@@ -8,6 +8,7 @@ namespace Coverlet.Core.Tests
     {
         private Modules _modules;
 
+        [testc]
         public CoverageResultTests()
         {
             Lines lines = new Lines();
