@@ -7,6 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="coverlet.collector.tests\coverlet.collector.tests.csproj" />
+    <None Include="coverlet.tests.xunit.extensions\coverlet.tests.xunit.extensions.csproj" />
+    <None Include="coverlet.testsubject\coverlet.testsubject.csproj" />
     <None Include="coverlet.tests\coverlet.core.tests.csproj" />
   </ItemGroup>
 
@@ -30,6 +33,12 @@
     <ProjectReference Include="..\Lulus.CustomerApp\Lulus.CustomerApp.csproj" />
     <ProjectReference Include="..\Lulus.Data\Lulus.Data.csproj" />
     <ProjectReference Include="..\Lulus.ViewModels\Lulus.ViewModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="coverlet.tests.xunit.extensions\bin\Debug\netstandard2.0\" />
+    <Folder Include="coverlet.tests.xunit.extensions\obj\Debug\netstandard2.0\" />
+    <Folder Include="coverlet.testsubject\obj\Debug\net5.0\" />
   </ItemGroup>
 
 </Project>
