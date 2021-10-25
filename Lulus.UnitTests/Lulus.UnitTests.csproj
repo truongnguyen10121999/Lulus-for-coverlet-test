@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <None Include="Test\coverlet.collector.tests\coverlet.collector.tests.csproj" />
+    <None Include="Test\coverlet.integration.template\coverlet.integration.template.csproj" />
+    <None Include="Test\coverlet.integration.tests\coverlet.integration.tests.csproj" />
     <None Include="Test\coverlet.tests.xunit.extensions\coverlet.tests.xunit.extensions.csproj" />
     <None Include="Test\coverlet.testsubject\coverlet.testsubject.csproj" />
     <None Include="Test\coverlet.tests\coverlet.core.tests.csproj" />
@@ -39,6 +41,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Test\coverlet.integration.tests\obj\Debug\net5.0\" />
     <Folder Include="Test\coverlet.tests.xunit.extensions\bin\Debug\netstandard2.0\" />
     <Folder Include="Test\coverlet.tests.xunit.extensions\obj\Debug\netstandard2.0\" />
     <Folder Include="Test\coverlet.testsubject\obj\Debug\net5.0\" />
