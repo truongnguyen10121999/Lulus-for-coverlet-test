@@ -39,7 +39,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ServiceTest\" />
     <Folder Include="Test\coverlet.tests.xunit.extensions\bin\Debug\netstandard2.0\" />
     <Folder Include="Test\coverlet.tests.xunit.extensions\obj\Debug\netstandard2.0\" />
     <Folder Include="Test\coverlet.testsubject\obj\Debug\net5.0\" />
