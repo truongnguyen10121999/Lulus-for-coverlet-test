@@ -32,7 +32,7 @@ namespace Lulus.CustomerApp
             services.AddTransient<ISubCategoryApi, SubCategoryApi>();
             services.AddTransient<IProductApi, ProductApi>();
             services.AddTransient<IFeedbackApi, FeedbackApi>();
-
+            services.AddTransient<IOrderApi, OrderApi>();
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options =>

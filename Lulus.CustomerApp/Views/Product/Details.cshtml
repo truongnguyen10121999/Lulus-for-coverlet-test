@@ -1,5 +1,6 @@
 ﻿@model Lulus.CustomerApp.Models.Products.DetailProductModel
 @using Lulus.ViewModels.Feedbacks
+@using Lulus.ViewModels.Order
 <style>
     .chooseBox{
         border-style:solid;
@@ -112,7 +113,22 @@
                         }
                         else
                         {
-                            <button class="btn btn-light sizeKey" data-toggle="tooltip" data-placement="top" title="Quantity: @size.Quantity">@size.Key</button>
+                            if (size.ID == Model.CurrentSizeID)
+                            {
+                                  <button class="btn btn-light sizeKey border border-primary border-3" data-toggle="tooltip" data-placement="top" title="Quantity: @size.Quantity">@size.Key</button>
+                            }
+                            else
+                            {
+                                <a asp-action="DetailChoosing"
+                                   asp-controller="Product"
+                                   asp-route-id="@Model.ID"
+                                   asp-route-line="@Model.CurrentLine"
+                                   asp-route-quantity="@Model.CurrentQuantity"
+                                   asp-route-size="@size.ID">
+                                    <button class="btn btn-light sizeKey" data-toggle="tooltip" data-placement="top" title="Quantity: @size.Quantity">@size.Key</button>
+                                </a>
+                            }
+
                         }
                     }
                 </div>
@@ -121,7 +137,9 @@
                     |
                     <b>Fit Note: Fit is true to size.</b>
                 </p>
-                <button class="btn btn-lg btn-dark">ADD TO BAG</button>
+                <a  asp-action="AddProduct" asp-controller="Cart" asp-route-id="@Model.CurrentLine,@Model.CurrentSizeID,@Model.CurrentQuantity">
+                    <button class="btn btn-lg btn-dark">ADD TO BAG</button>
+                </a>
                 <p><i class="fas fa-shipping-fast"></i> Free International Shipping on orders over $150 with code WorldWide! <a href="#">See More</a></p>
             </div>
             <br/>

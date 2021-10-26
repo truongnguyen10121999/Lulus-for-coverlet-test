@@ -9,5 +9,7 @@ namespace Lulus.CustomerApp.Models.Products
     public class DetailProductModel: ProductViewModel
     {
         public int CurrentLine { get; set; }
+        public int CurrentQuantity { get; set; } = 1;
+        public int CurrentSizeID { get; set; }
     }
 }

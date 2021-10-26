@@ -8,6 +8,7 @@ namespace Lulus.Data.Enums
 {
     public enum OrderStatus
     {
+        Choosing,
         New,
         Accepted,
         Deny,

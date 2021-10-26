@@ -21,5 +21,8 @@ namespace Lulus.Data.Entities
         public virtual Order Order { get; set; }
 
         public virtual ProductLine ProductLine { get; set; }
-}
+        public int Size_ID { get; set; }
+
+        public virtual Size Size { get; set; }
+    }
 }

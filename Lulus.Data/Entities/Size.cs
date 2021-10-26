@@ -13,5 +13,6 @@ namespace Lulus.Data.Entities
         public string Size_Key { get; set; }
 
         public virtual List<LineQuantity> LineQuantities { get; set; }
+        public virtual List<OrderDetail> OrderDetails { get; set; }
     }
 }
