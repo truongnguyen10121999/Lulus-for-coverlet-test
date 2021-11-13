@@ -22,7 +22,7 @@ namespace Lulus.BackendApi.Controllers
         [HttpGet]
         public async Task<IActionResult> GetList()
         {
-            var categories = await _categoryService.GetAllCategory();
+            var categories = await _categoryService.GetAllProducts();
             return Ok(categories);
         }
     }

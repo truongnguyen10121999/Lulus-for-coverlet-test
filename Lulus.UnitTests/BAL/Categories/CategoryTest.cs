@@ -20,7 +20,7 @@ namespace Lulus.UnitTests.BAL.Categories
             var dbcontext = new LulusDBContext(builder.Options);
             var service = new CategoryService(dbcontext);
 
-            var result = await service.GetAllCategory();
+            var result = await service.GetAllProducts();
 
             Assert.Empty(result);
         }
@@ -40,7 +40,7 @@ namespace Lulus.UnitTests.BAL.Categories
 
             var service = new CategoryService(dbcontext);
 
-            var result = await service.GetAllCategory();
+            var result = await service.GetAllProducts();
 
             Assert.Equal(1, result.First().ID);
             Assert.Equal("Pants", result.First().Name);

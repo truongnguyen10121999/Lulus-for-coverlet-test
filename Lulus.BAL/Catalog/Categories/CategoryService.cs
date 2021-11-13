@@ -18,7 +18,7 @@ namespace Lulus.BAL.Catalog.Categories
         {
             _context = context;
         }
-        public async Task<List<CategoryViewModel>> GetAllCategory()
+        public async Task<List<CategoryViewModel>> GetAllProducts()
         {
             var query = from c in _context.Categories
                         select c;

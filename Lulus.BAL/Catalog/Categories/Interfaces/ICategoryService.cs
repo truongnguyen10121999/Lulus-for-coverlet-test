@@ -9,6 +9,6 @@ namespace Lulus.BAL.Catalog.Categories.Interfaces
 {
     public interface ICategoryService
     {
-        Task<List<CategoryViewModel>> GetAllCategory();
+        Task<List<CategoryViewModel>> GetAllProducts();
     }
 }

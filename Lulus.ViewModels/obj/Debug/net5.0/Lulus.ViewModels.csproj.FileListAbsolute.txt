@@ -13,3 +13,17 @@ D:\.CanDelete\Git\Lulus-master\Lulus.ViewModels\obj\Debug\net5.0\Lulus.ViewModel
 D:\.CanDelete\Git\Lulus-master\Lulus.ViewModels\obj\Debug\net5.0\Lulus.ViewModels.dll
 D:\.CanDelete\Git\Lulus-master\Lulus.ViewModels\obj\Debug\net5.0\ref\Lulus.ViewModels.dll
 D:\.CanDelete\Git\Lulus-master\Lulus.ViewModels\obj\Debug\net5.0\Lulus.ViewModels.pdb
+C:\Users\USER\Documents\GitHub\Lulus-for-coverlet-test\Lulus.ViewModels\bin\Debug\net5.0\Lulus.ViewModels.deps.json
+C:\Users\USER\Documents\GitHub\Lulus-for-coverlet-test\Lulus.ViewModels\bin\Debug\net5.0\Lulus.ViewModels.dll
+C:\Users\USER\Documents\GitHub\Lulus-for-coverlet-test\Lulus.ViewModels\bin\Debug\net5.0\ref\Lulus.ViewModels.dll
+C:\Users\USER\Documents\GitHub\Lulus-for-coverlet-test\Lulus.ViewModels\bin\Debug\net5.0\Lulus.ViewModels.pdb
+C:\Users\USER\Documents\GitHub\Lulus-for-coverlet-test\Lulus.ViewModels\bin\Debug\net5.0\Lulus.Data.dll
+C:\Users\USER\Documents\GitHub\Lulus-for-coverlet-test\Lulus.ViewModels\bin\Debug\net5.0\Lulus.Data.pdb
+C:\Users\USER\Documents\GitHub\Lulus-for-coverlet-test\Lulus.ViewModels\obj\Debug\net5.0\Lulus.ViewModels.csproj.AssemblyReference.cache
+C:\Users\USER\Documents\GitHub\Lulus-for-coverlet-test\Lulus.ViewModels\obj\Debug\net5.0\Lulus.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Documents\GitHub\Lulus-for-coverlet-test\Lulus.ViewModels\obj\Debug\net5.0\Lulus.ViewModels.AssemblyInfoInputs.cache
+C:\Users\USER\Documents\GitHub\Lulus-for-coverlet-test\Lulus.ViewModels\obj\Debug\net5.0\Lulus.ViewModels.AssemblyInfo.cs
+C:\Users\USER\Documents\GitHub\Lulus-for-coverlet-test\Lulus.ViewModels\obj\Debug\net5.0\Lulus.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\USER\Documents\GitHub\Lulus-for-coverlet-test\Lulus.ViewModels\obj\Debug\net5.0\Lulus.ViewModels.dll
+C:\Users\USER\Documents\GitHub\Lulus-for-coverlet-test\Lulus.ViewModels\obj\Debug\net5.0\ref\Lulus.ViewModels.dll
+C:\Users\USER\Documents\GitHub\Lulus-for-coverlet-test\Lulus.ViewModels\obj\Debug\net5.0\Lulus.ViewModels.pdb

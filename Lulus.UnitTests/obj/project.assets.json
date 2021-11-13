@@ -9200,25 +9200,30 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Asus\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\USER\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\.CanDelete\\Git\\Lulus-master\\Lulus.UnitTests\\Lulus.UnitTests.csproj",
+      "projectUniqueName": "C:\\Users\\USER\\Documents\\GitHub\\Lulus-for-coverlet-test\\Lulus.UnitTests\\Lulus.UnitTests.csproj",
       "projectName": "Lulus.UnitTests",
-      "projectPath": "D:\\.CanDelete\\Git\\Lulus-master\\Lulus.UnitTests\\Lulus.UnitTests.csproj",
-      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "D:\\.CanDelete\\Git\\Lulus-master\\Lulus.UnitTests\\obj\\",
+      "projectPath": "C:\\Users\\USER\\Documents\\GitHub\\Lulus-for-coverlet-test\\Lulus.UnitTests\\Lulus.UnitTests.csproj",
+      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\USER\\Documents\\GitHub\\Lulus-for-coverlet-test\\Lulus.UnitTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -9231,11 +9236,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\.CanDelete\\Git\\Lulus-master\\Lulus.BAL\\Lulus.BAL.csproj": {
-              "projectPath": "D:\\.CanDelete\\Git\\Lulus-master\\Lulus.BAL\\Lulus.BAL.csproj"
+            "C:\\Users\\USER\\Documents\\GitHub\\Lulus-for-coverlet-test\\Lulus.BAL\\Lulus.BAL.csproj": {
+              "projectPath": "C:\\Users\\USER\\Documents\\GitHub\\Lulus-for-coverlet-test\\Lulus.BAL\\Lulus.BAL.csproj"
             },
-            "D:\\.CanDelete\\Git\\Lulus-master\\Lulus.Data\\Lulus.Data.csproj": {
-              "projectPath": "D:\\.CanDelete\\Git\\Lulus-master\\Lulus.Data\\Lulus.Data.csproj"
+            "C:\\Users\\USER\\Documents\\GitHub\\Lulus-for-coverlet-test\\Lulus.Data\\Lulus.Data.csproj": {
+              "projectPath": "C:\\Users\\USER\\Documents\\GitHub\\Lulus-for-coverlet-test\\Lulus.Data\\Lulus.Data.csproj"
             }
           }
         }
@@ -9290,7 +9295,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
